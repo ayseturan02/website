@@ -6,6 +6,7 @@ use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Back\AppController;
 use App\Http\Controllers\Back\PhotoController;
 use App\Http\Controllers\Back\AlbumController;
+use App\Http\Controllers\Back\MusicController;
 /*
 |--------------------------------------------------------------------------
 | Back Routes
@@ -19,12 +20,17 @@ Route::get("galeri/edit/{id}",[PhotoController::class,"edit"])->name("admin.foto
 Route::get("galeri/destroy/{id}",[PhotoController::class,"destroy"])->name("admin.fotograflar.destroy");
 Route::post("anasayfa/store",[PhotoController::class,"store"])->name("admin.fotograflar.store");
 Route::get("anasayfa/destroy/{id}",[PhotoController::class,"destroy"])->name("admin.fotograflar.destroy");
+
 Route::get("album",[AlbumController::class,"index"])->name("admin.album.index");
 Route::get("albumekle",[AlbumController::class,"create"])->name("admin.album.create");
 Route::get("album/edit/{id}",[AlbumController::class,"edit"])->name("admin.album.edit");
 Route::post("albumyenile",[AlbumController::class,"update"])->name("admin.album.update");
 Route::get("album/destroy/{id}",[AlbumController::class,"destroy"])->name("admin.album.destroy");
 Route::post("album/store",[AlbumController::class,"store"])->name("admin.album.store");
+
+Route::get("şarkılar",[MusicController::class,"index"])->name("admin.music.index");
+Route::get("şarkı/ekle",[MusicController::class,"create"])->name("admin.music.create");
+Route::get("şarkı/destroy/{id}",[MusicController::class,"destroy"])->name("admin.album.destroy");
 
 /*
 |--------------------------------------------------------------------------

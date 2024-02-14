@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Album;
+use App\Models\Music;
 use App\Models\Photo;
 
 class HomeController extends Controller
@@ -38,7 +39,8 @@ class HomeController extends Controller
 
     public function searc(){
 
-        return view("front.pages.discover");
+        $musics = Music::where("id")->get();
+        return view("front.pages.discover",compact("musics"));
 
     }
 
