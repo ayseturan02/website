@@ -35,6 +35,7 @@
     @yield("content")
     <!-- ##### Footer Area Start ##### -->
     @include("front.inc.footer")
+
 <!-- ##### Footer Area Start ##### -->
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->

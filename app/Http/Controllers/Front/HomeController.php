@@ -39,7 +39,7 @@ class HomeController extends Controller
 
     public function searc(){
 
-        $musics = Music::where("id")->get();
+        $musics = Music::orderBy("id")->get();
         return view("front.pages.discover",compact("musics"));
 
     }
