@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Album;
 use App\Models\Music;
 use App\Models\Photo;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -20,8 +21,11 @@ class HomeController extends Controller
 
     public function anasayfa(){
 
+        $musics = DB::table('musics')->max('id');
+
+        $albums = Album::orderBy("id","ASC")->get();
         $photos = Photo::orderBy("id")->get();
-        return view("front.pages.homepage",compact("photos"));
+        return view("front.pages.homepage",compact("photos","albums","musics"));
 
     }
 
@@ -39,7 +43,7 @@ class HomeController extends Controller
 
     public function searc(){
 
-        $musics = Music::where("id")->get();
+        $musics = Music::orderBy("id")->get();
         return view("front.pages.discover",compact("musics"));
 
     }

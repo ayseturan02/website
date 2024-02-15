@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use App\Models\Music;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class MusicController extends Controller
 {
@@ -22,7 +23,7 @@ class MusicController extends Controller
      */
     public function create()
     {
-        //
+        return view("back.pages.musics.create");
     }
 
     /**
@@ -30,7 +31,22 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $musics = new Music();
+        $musics->id = $request->id;
+        $musics->name = $request->name;
+        $musics->artist = $request->artist;
+        $musics->audio = $request->audio;
+        $musics->photo = $request->photo;
+        if ($request->hasFile("photo")) {
+            $path = public_path("images/");
+            $name = Str::random(10);
+            $file = $request->file("photo");
+            $name .= $name . $file->getClientOriginalName();
+            $file->move($path, $name);
+            $musics->photo = $name;
+        }
+        $musics->save();
+        return redirect()->route("admin.music.index");
     }
 
     /**

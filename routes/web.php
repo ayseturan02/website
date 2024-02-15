@@ -30,7 +30,8 @@ Route::post("album/store",[AlbumController::class,"store"])->name("admin.album.s
 
 Route::get("şarkılar",[MusicController::class,"index"])->name("admin.music.index");
 Route::get("şarkı/ekle",[MusicController::class,"create"])->name("admin.music.create");
-Route::get("şarkı/destroy/{id}",[MusicController::class,"destroy"])->name("admin.album.destroy");
+Route::get("şarkı/destroy/{id}",[MusicController::class,"destroy"])->name("admin.music.destroy");
+Route::post("şarkı/store",[MusicController::class,"store"])->name("admin.music.store");
 
 /*
 |--------------------------------------------------------------------------
