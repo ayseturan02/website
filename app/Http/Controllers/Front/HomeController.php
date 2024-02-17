@@ -21,8 +21,8 @@ class HomeController extends Controller
 
     public function anasayfa(){
 
-        $musics = DB::table('musics')->max('id');
 
+        $musics = Music::where("id","1")->get();
         $albums = Album::orderBy("id","ASC")->get();
         $photos = Photo::orderBy("id")->get();
         return view("front.pages.homepage",compact("photos","albums","musics"));
@@ -50,8 +50,9 @@ class HomeController extends Controller
 
     public function albums(){
 
+        $musics = Music::orderBy("id")->get();
         $albums = Album::orderBy("id")->get();
-        return view("front.pages.albums",compact("albums"));
+        return view("front.pages.albums",compact("albums","musics"));
 
     }
     public function favoriler(){

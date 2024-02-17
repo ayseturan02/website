@@ -78,6 +78,10 @@ class MusicController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $music = Music::find($id);
+        if (isset($music)) {
+            $music->delete();
+        }
+        return redirect()->route("admin.music.index");
     }
 }
