@@ -7,6 +7,7 @@ use App\Http\Controllers\Back\AppController;
 use App\Http\Controllers\Back\PhotoController;
 use App\Http\Controllers\Back\AlbumController;
 use App\Http\Controllers\Back\MusicController;
+use App\Http\Controllers\Back\CommentsController;
 /*
 |--------------------------------------------------------------------------
 | Back Routes
@@ -32,6 +33,10 @@ Route::get("şarkılar",[MusicController::class,"index"])->name("admin.music.ind
 Route::get("şarkı/ekle",[MusicController::class,"create"])->name("admin.music.create");
 Route::get("şarkı/destroy/{id}",[MusicController::class,"destroy"])->name("admin.music.destroy");
 Route::post("şarkı/store",[MusicController::class,"store"])->name("admin.music.store");
+
+Route::get("yorumlar",[CommentsController::class,"index"])->name("admin.yorum.index");
+Route::get("yorumlar",[CommentsController::class,"index"])->name("admin.görüntüle.index");
+Route::get("yorum/destroy/{id}",[CommentsController::class,"destroy"])->name("admin.yorum.destroy");
 
 /*
 |--------------------------------------------------------------------------
