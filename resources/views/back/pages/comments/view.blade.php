@@ -38,41 +38,21 @@
             </div>
         </nav>
 
-    <div class="bg-secondary rounded h-100 p-4">
-        <h1 class="mb-4" style="color: #6a1a21"> C O M M E N T S</h1>
-        <table class="table table-dark">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">İsim</th>
-                <th scope="col">Mail</th>
-                <th scope="col">Konu</th>
-                <th scope="col">Görüntüle</th>
-                <th scope="col">Sil</th>
 
 
-            </tr>
-            </thead>
+        <div class="bg-secondary rounded h-100 p-4">
+            <h6 class="mb-4">*********</h6>
+
             @foreach($comments as $comment)
-            <tbody>
-            <tr>
-                <td scope="row">{{$comment->id}}</td>
-                <th >{{$comment->name}}</th>
-                <td>{{$comment->email}}</td>
-                <td>{{$comment->subject}}</td>
-                <td><div class="m-n2">
-                        <a type="button" href="{{route("admin.görüntüle.index",$comment->id)}}" class="btn btn-outline-success m-2">incele</a>
-                    </div></td>
-                <td><div class="m-n2">
-                        <a type="button" href="{{route("admin.yorum.destroy",$comment->id)}}" class="btn btn-outline-danger m-2">sil</a>
-                    </div>
-                </td>
-
-            </tr>
-            </tbody>
+            <div class="alert alert-dark mb-0" role="alert" class="form-sample" class="form-control" >
+                {{$comment->yorum}}
+            </div><br>
             @endforeach
-        </table>
-    </div>
+        </div>
+
+
+
+
 
     </div>
 @endsection

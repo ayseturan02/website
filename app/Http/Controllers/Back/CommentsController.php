@@ -14,7 +14,8 @@ class CommentsController extends Controller
     public function index()
     {
 
-        return view("back.pages.comments.index");
+        $comments = Comments::orderBy("id")->get();
+        return view("back.pages.comments.index",compact("comments"));
     }
 
     /**

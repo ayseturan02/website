@@ -35,7 +35,7 @@ Route::get("şarkı/destroy/{id}",[MusicController::class,"destroy"])->name("adm
 Route::post("şarkı/store",[MusicController::class,"store"])->name("admin.music.store");
 
 Route::get("yorumlar",[CommentsController::class,"index"])->name("admin.yorum.index");
-Route::get("yorumlar",[CommentsController::class,"index"])->name("admin.görüntüle.index");
+Route::get("yorumlar/{id}",[AppController::class,"görüntüle"])->name("admin.görüntüle.index");
 Route::get("yorum/destroy/{id}",[CommentsController::class,"destroy"])->name("admin.yorum.destroy");
 
 /*
@@ -52,6 +52,7 @@ Route::group(["Middleware"=>"sitesetting"],function (){
     Route::get("/favoriler",[HomeController::class,"favoriler"])->name("favoriler");
     Route::get("/konserler",[HomeController::class,"konserler"])->name("konserler");
     Route::get("/arama",[HomeController::class,"searc"])->name("arama");
+    Route::post("/yorumYap",[HomeController::class,"store"])->name("yorum.store");
 
     Route::get("/login",[HomeController::class,"login"])->name("giris");
     Route::get("/register",[HomeController::class,"register"])->name("kayıt");

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Album;
+use App\Models\Comments;
 use App\Models\Music;
 use App\Models\Photo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -63,6 +65,20 @@ class HomeController extends Controller
     public function konserler(){
 
         return view("front.pages.news");
+
+    }
+
+    public function store(Request $request){
+
+        $comments = new Comments();
+        $comments ->id = $request->id;
+        $comments ->name = $request->name;
+        $comments ->email = $request->email;
+        $comments ->subject = $request->subject;
+        $comments ->yorum = $request->yorum;
+        $comments ->save();
+        return redirect()->route("anasayfa");
+
 
     }
 }
