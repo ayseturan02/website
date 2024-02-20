@@ -53,6 +53,8 @@ Route::group(["Middleware"=>"sitesetting"],function (){
     Route::get("/konserler",[HomeController::class,"konserler"])->name("konserler");
     Route::get("/arama",[HomeController::class,"searc"])->name("arama");
     Route::post("/yorumYap",[HomeController::class,"store"])->name("yorum.store");
+    Route::post("/favoriler/ekle",[HomeController::class,"store2"])->name("favori.store");
+
 
     Route::get("/login",[HomeController::class,"login"])->name("giris");
     Route::get("/register",[HomeController::class,"register"])->name("kayıt");

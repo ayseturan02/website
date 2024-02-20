@@ -79,6 +79,19 @@ class HomeController extends Controller
         $comments ->save();
         return redirect()->route("anasayfa");
 
+    }
+    public function store2(Request $request){
+
+        $favorites = new Comments();
+        $favorites ->id = $request->id;
+        $favorites ->name = $request->name;
+        $favorites ->email = $request->email;
+        $favorites ->subject = $request->subject;
+        $favorites ->yorum = $request->yorum;
+        $favorites ->save();
+        return redirect()->route("anasayfa");
 
     }
+
+
 }
