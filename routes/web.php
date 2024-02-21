@@ -8,6 +8,7 @@ use App\Http\Controllers\Back\PhotoController;
 use App\Http\Controllers\Back\AlbumController;
 use App\Http\Controllers\Back\MusicController;
 use App\Http\Controllers\Back\CommentsController;
+use App\Http\Controllers\Back\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Back Routes
@@ -37,6 +38,13 @@ Route::post("şarkı/store",[MusicController::class,"store"])->name("admin.music
 Route::get("yorumlar",[CommentsController::class,"index"])->name("admin.yorum.index");
 Route::get("yorumlar/{id}",[AppController::class,"görüntüle"])->name("admin.görüntüle.index");
 Route::get("yorum/destroy/{id}",[CommentsController::class,"destroy"])->name("admin.yorum.destroy");
+
+Route::get("haber",[NewsController::class,"index"])->name("admin.haber.index");
+Route::get("haber/ekle",[NewsController::class,"create"])->name("admin.haber.create");
+Route::get("haber/edit/{id}",[NewsController::class,"edit"])->name("admin.haber.edit");
+Route::post("haberyenile",[NewsController::class,"update"])->name("admin.haber.update");
+Route::get("haber/destroy/{id}",[NewsController::class,"destroy"])->name("admin.haber.destroy");
+Route::post("haber/store",[NewsController::class,"store"])->name("admin.haber.store");
 
 /*
 |--------------------------------------------------------------------------
