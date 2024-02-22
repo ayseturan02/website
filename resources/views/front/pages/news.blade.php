@@ -10,24 +10,25 @@
     <div class="blog-area section-padding-100">
         <div class="container">
             <div class="row">
+                @foreach($news as $new)
                 <div class="col-12 col-lg-9">
 
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
                         <!-- Post Thumb -->
                         <div class="blog-post-thumb mt-30">
-                            <a href="#"><img src="{{asset("frontend/img/bg-img/blog1.jpg")}}" alt=""></a>
+                            <a href="#"><img src="{{asset("images/".$new->photo)}}" alt=""></a>
                             <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
+                            <div class="post-date" style="width: 150px">
+
+                                <span>{{$new->tarih}}</span>
                             </div>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <!-- Post Title -->
-                            <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
+                            <a href="#" class="post-title">{{$new->başlık}}</a>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
                                 <p class="post-author">By<a href="#"> Admin</a></p>
@@ -35,65 +36,10 @@
                                 <p class="tags"><a href="#">2 Comments</a></p>
                             </div>
                             <!-- Post Excerpt -->
-                            <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
+                            <p>{{$new->metin}}</p>
                         </div>
                     </div>
 
-                    <!-- Single Post Start -->
-                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                        <!-- Post Thumb -->
-                        <div class="blog-post-thumb mt-30">
-                            <a href="#"><img src="{{asset("frontend/img/bg-img/blog2.jpg")}}" alt=""></a>
-                            <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
-                            </div>
-                        </div>
-
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <!-- Post Title -->
-                            <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
-                            </div>
-                            <!-- Post Excerpt -->
-                            <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Post Start -->
-                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-                        <!-- Post Thumb -->
-                        <div class="blog-post-thumb mt-30">
-                            <a href="#"><img src="{{asset("frontend/img/bg-img/blog3.jpg")}}" alt=""></a>
-                            <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
-                            </div>
-                        </div>
-
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <!-- Post Title -->
-                            <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
-                            </div>
-                            <!-- Post Excerpt -->
-                            <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pagination -->
                     <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
                         <nav>
                             <ul class="pagination">
@@ -104,7 +50,7 @@
                         </nav>
                     </div>
                 </div>
-
+                @endforeach
                 <div class="col-12 col-lg-3">
                     <div class="blog-sidebar-area">
 
@@ -179,45 +125,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading white">
-                        <p>See what’s new</p>
-                        <h2>Get In Touch</h2>
+
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12">
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>

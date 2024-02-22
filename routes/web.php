@@ -42,7 +42,7 @@ Route::get("yorum/destroy/{id}",[CommentsController::class,"destroy"])->name("ad
 Route::get("haber",[NewsController::class,"index"])->name("admin.haber.index");
 Route::get("haber/ekle",[NewsController::class,"create"])->name("admin.haber.create");
 Route::get("haber/edit/{id}",[NewsController::class,"edit"])->name("admin.haber.edit");
-Route::post("haberyenile",[NewsController::class,"update"])->name("admin.haber.update");
+Route::post("haber/yenile",[NewsController::class,"update"])->name("admin.haber.update");
 Route::get("haber/destroy/{id}",[NewsController::class,"destroy"])->name("admin.haber.destroy");
 Route::post("haber/store",[NewsController::class,"store"])->name("admin.haber.store");
 

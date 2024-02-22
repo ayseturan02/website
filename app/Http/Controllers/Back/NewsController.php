@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -12,7 +13,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $news=News::orderBy("id")->get();
+        return view("back.pages.news.index",compact("news"));
     }
 
     /**

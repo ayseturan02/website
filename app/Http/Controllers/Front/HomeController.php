@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Album;
 use App\Models\Comments;
 use App\Models\Music;
+use App\Models\News;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -64,7 +65,8 @@ class HomeController extends Controller
     }
     public function konserler(){
 
-        return view("front.pages.news");
+        $news = News::orderBy("id")->get();
+        return view("front.pages.news",compact("news"));
 
     }
 
